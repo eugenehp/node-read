@@ -91,7 +91,7 @@ var read = module.exports = function(html, options, callback) {
     };
   }
 
-  if (!html.match(/^\s*</)) {
+  if (html.indexOf('http') == 0) {
     req(html, options, function(err, res, body) {
       if (err) {
         return callback(err);
